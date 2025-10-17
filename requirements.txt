@@ -1,0 +1,14 @@
+torch>=2.0.0
+torchvision
+numpy>=1.24
+pandas
+tqdm
+sentencepiece
+tokenizers
+pyyaml
+matplotlib
+scikit-learn
+tensorboard
+streamlit
+pytest
+huggingface-hub

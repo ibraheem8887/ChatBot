@@ -1,0 +1,38 @@
+data:
+  raw_path: "data/"
+  processed_path: "data/processed/"
+  file_name: "emotion-emotion_69k.csv"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+tokenizer:
+  save_dir: "data/tokenizer/"
+  vocab_size: 8000
+  model_prefix: "empathetic"
+  character_coverage: 1.0
+
+# Training setup
+seed: 42
+device: cpu        # ✅ use "cuda" if you have GPU, else "cpu"
+batch_size: 32      # bigger batch → better stability (reduce to 16 if on CPU)
+num_epochs: 4       # ✅ train longer to actually learn language & empathy
+train_samples: 7500  # use more data for better generalization
+
+# Optimization
+lr: 3e-4            # slightly higher LR for better convergence
+warmup_steps: 1000  # smoother warmup
+clip_norm: 1.0      # prevents exploding gradients
+
+# Transformer architecture
+d_model: 256      # ✅ more expressive model
+n_heads: 8
+d_ff: 1024
+enc_layers: 4
+dec_layers: 4
+dropout: 0.1
+
+# Sequence configuration
+max_src_len: 128
+max_tgt_len: 50
+vocab_size: 8000
