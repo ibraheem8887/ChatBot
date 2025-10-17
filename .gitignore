@@ -10,9 +10,7 @@ venv/
 # Data and checkpoints
 data/raw/
 data/processed/
-checkpoints/
-*.pth
-*.pt
+
 
 # Notebook checkpoints
 .ipynb_checkpoints
